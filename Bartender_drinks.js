@@ -14,3 +14,18 @@
 //
 // Make sure you cover the cases where certain words do not show up with correct capitalization.
 // For example, getDrinkByProfession("pOLitiCIaN") should still return "Your tax dollars".
+
+function getDrinkByProfession(param){
+
+    return {
+        "jabroni" : "Patron Tequila",
+        "school counselor" : "Anything with Alcohol",
+        "programmer" : "Hipster Craft Beer",
+        "bike gang member" : "Moonshine",
+        "politician" : "Your tax dollars",
+        "rapper" : "Cristal"
+    }[param.toLowerCase()] || 'Beer'
+}
+
+console.log(getDrinkByProfession("JabrOni"));
+console.log(getDrinkByProfession("scHOOl counselor"));
