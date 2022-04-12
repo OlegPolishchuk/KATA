@@ -12,7 +12,6 @@
 // If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
 const duplicateEncode = (str) => {
-    console.log(str.toLowerCase().split('').map((el,i,arr) => arr.indexOf(el) === -1 && arr.lastIndexOf(el) === i))
     return str.toLowerCase().split('').map((el,i,arr) => arr.indexOf(el) === i && arr.lastIndexOf(el) === i ? '(' : ')').join('')
 }
 
