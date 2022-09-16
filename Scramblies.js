@@ -20,6 +20,9 @@ function assignValue(obj,property){
 }
 
 function scramble(str1, str2) {
+    return [...str2].every(val => {
+     return str2.split(val).length <= str1.split(val).length;
+    })
     // Execution Timed Out (12000 ms) !!!!
     // let resultStr = str1;
     //
@@ -36,23 +39,23 @@ function scramble(str1, str2) {
     //     return false;
     // })
 
-    const letters1 = {};
-    const letters2 = {};
-
-    str1.split('').forEach(letter => {
-       assignValue(letters1, letter)
-    })
-    console.log(letters1)
-    str2.split('').forEach(letter => {
-        assignValue(letters2, letter)
-    })
-
-    for (let letter in letters2) {
-        if (!letters1[letter]) { return false }
-        if(letters2[letter] > letters1[letter]) { return false }
-    }
-
-    return true;
+    // const letters1 = {};
+    // const letters2 = {};
+    //
+    // str1.split('').forEach(letter => {
+    //    assignValue(letters1, letter)
+    // })
+    //
+    // str2.split('').forEach(letter => {
+    //     assignValue(letters2, letter)
+    // })
+    //
+    // for (let letter in letters2) {
+    //     if (!letters1[letter]) { return false }
+    //     if(letters2[letter] > letters1[letter]) { return false }
+    // }
+    //
+    // return true;
 }
 
 console.log(scramble('cedewaraaossoqqyt', 'codewars')); // true
